@@ -14,7 +14,7 @@ The frontend is built using React.js and allows users to upload an image file. U
 
 Here's the relevant code snippet:
 
-
+```jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -47,12 +47,13 @@ function App() {
 }
 
 export default App;
+```
 Backend (FastAPI)
 The backend is built using FastAPI and handles the image prediction using the pre-trained neural network model. It receives the image file from the frontend, preprocesses it, and passes it through the model to obtain the prediction.
 
 Here's the relevant code snippet:
 
-python
+```python
 
 
 Copy code
@@ -93,6 +94,8 @@ async def predict(file: UploadFile = File(...)):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
+
+```
 Usage
 Start the backend server by running uvicorn main:app in the backend/ directory.
 Start the frontend development server by running npm start in the frontend/ directory.
